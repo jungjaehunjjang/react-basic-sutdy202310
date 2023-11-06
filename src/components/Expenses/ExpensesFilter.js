@@ -3,7 +3,7 @@ import './ExpensesFilter.css';
 
 const ExpensesFilter = ({ onChangeFilter }) => {
   const dropdownChangeHandler = (e) => {
-    //selected된 yeqr의 값을 Expenses에서 사용할 수 있도록
+    //selected된 year의 값을 Expenses에서 사용할 수 있도록
     //올려보내 보세요.
     const selectedYear = e.target.value;
     onChangeFilter(selectedYear);

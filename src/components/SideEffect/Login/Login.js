@@ -3,6 +3,8 @@ import React, { useContext, useEffect, useReducer, useState } from 'react';
 import Card from '../../UI/Card';
 import styles from './Login.module.css';
 import Button from '../../UI/Button/Button';
+import AuthContext from '../../../store/auth-context';
+import Input from '../../UI/input/Input';
 
 // 리듀서 함수
 /*
@@ -53,7 +55,7 @@ const passwordReducer = (state, action) => {
 };
 
 const Login = () => {
-  const {} = useContext(Authcontext);
+  const { onLogin } = useContext(AuthContext);
 
   //eamil reducer 사용하기
   /*

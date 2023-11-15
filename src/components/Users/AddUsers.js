@@ -22,7 +22,7 @@ const AddUsers = ({ onAddUser }) => {
 
     if (username.trim() === '' || age.trim() === '') {
       setError({
-        title: '유호하지 않은 입력값',
+        title: '유효하지 않은 입력값',
         message: '입력값은 공백으로 작성하면 안됩니다!',
       });
       return;

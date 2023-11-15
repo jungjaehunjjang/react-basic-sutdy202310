@@ -1,4 +1,4 @@
-import React, { Children } from 'react';
+import React from 'react';
 import styles from './CartModal.module.scss';
 import Portal from '../Portal/Portal';
 

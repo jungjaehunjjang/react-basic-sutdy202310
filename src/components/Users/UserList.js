@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './UserList.module.css';
 import Card from '../UI/Card';
 
-const USerList = ({ users }) => {
+const UserList = ({ users }) => {
   console.log(users);
   return (
     <Card className={styles.users}>
@@ -17,4 +17,4 @@ const USerList = ({ users }) => {
   );
 };
 
-export default USerList;
+export default UserList;

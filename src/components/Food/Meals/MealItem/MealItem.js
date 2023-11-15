@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import styles from './MealItem.module.scss';
-import MealItemForm from '../MealItemForm';
+import MealItemForm from './MealItemForm';
 import CartContext from '../../../../store/cart-context';
 
 const MealItem = ({ id, price, description, name }) => {
@@ -32,7 +32,7 @@ const MealItem = ({ id, price, description, name }) => {
       <div>
         <MealItemForm
           id={id}
-          onAddtoCart={addToCartHandler}
+          onAddToCart={addToCartHandler}
         />
       </div>
     </li>

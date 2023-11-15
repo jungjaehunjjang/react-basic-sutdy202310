@@ -2,8 +2,8 @@ import React, { useContext } from 'react';
 
 import Card from '../../UI/Card';
 import styles from './Home.module.css';
-import AuthContext from '../../../store/auth-context';
 import Button from '../../UI/Button/Button';
+import AuthContext from '../../../store/auth-context';
 
 const Home = () => {
   const { onLogout } = useContext(AuthContext);

@@ -4,7 +4,7 @@ import Card from '../../UI/Card';
 import styles from './Login.module.css';
 import Button from '../../UI/Button/Button';
 import AuthContext from '../../../store/auth-context';
-import Input from '../../UI/input/Input';
+import Input from '../../UI/Input/Input';
 
 // 리듀서 함수
 /*
@@ -17,11 +17,11 @@ import Input from '../../UI/input/Input';
   return: 관리할 상태값들을 반환
 */
 const emailReducer = (state, action) => {
-  console.log('email reducer called!!!');
-  console.log('state; ', state);
-  console.log('action: ', action);
+  // console.log('email reducer called!!!');
+  // console.log('state: ', state);
+  // console.log('action: ', action);
 
-  // dispatch함수가 전달한 액션 객체의 타입에 따라 변경할 상태값을 변환.
+  // dispatch 함수가 전달한 액션 객체의 타입에 따라 변경할 상태값을 반환.
   if (action.type === 'USER_INPUT') {
     return {
       value: action.val,
@@ -34,10 +34,10 @@ const emailReducer = (state, action) => {
     };
   }
 
-  return {
-    value: '',
-    isValid: null,
-  };
+  // return {
+  //   value: '',
+  //   isValid: null,
+  // };
 };
 
 const passwordReducer = (state, action) => {
@@ -57,7 +57,7 @@ const passwordReducer = (state, action) => {
 const Login = () => {
   const { onLogin } = useContext(AuthContext);
 
-  //eamil reducer 사용하기
+  // email reducer 사용하기
   /*
     param1 - reducer function: 위에서 만든 리듀서 함수
     param2 - initial state: 초기 상태값
@@ -74,16 +74,16 @@ const Login = () => {
     isValid: null,
   });
 
-  // 이메일, 패스워드 둘다 동시에 정상적인 상태인지 확인
+  // 이메일, 패스워드가 둘 다 동시에 정상적인 상태인지 확인
   const [formIsValid, setFormIsValid] = useState(false);
 
-  // emailState는 객체 형태. -> isValid 프로퍼티가 변경됐을 때만 useEffect를 싱핼하게 하려면
-  // isValid를 디스트럭쳐링 한다. (프로퍼티로 바로 사용x)
+  // emailState는 객체 형태. -> isValid 프로퍼티가 변경됐을 때만 useEffect를 실행하게 하려면
+  // isValid를 디스트럭쳐링 한다. (프로퍼티로 바로 사용 x)
   const { isValid: emailIsValid } = emailState;
   const { isValid: passwordIsValid } = passwordState;
 
-  // 입력란을 모두 체크하여 form의 버튼 disabled를 해제하는 상태 변수
-  // formIsValid의 사이드 이펙트를 처리하는 영역
+  // 입력란을 모두 체크하여 form의 버튼 disabled를 해제하는
+  // 상태 변수 formIsValid의 사이드 이펙트를 처리하는 영역
   useEffect(() => {
     const timer = setTimeout(() => {
       console.log('useEffect called in Login.js!');
@@ -96,7 +96,7 @@ const Login = () => {
       clearTimeout(timer);
     };
 
-    // 이 배열에 상태변수를 넣어주면 그 상태변수가 바뀔 때 마다 useEffect를 재실행함.
+    // 이 배열에 상태변수를 넣어주면 그 상태변수가 바뀔 때마다 useEffect를 재실행함.
   }, [emailIsValid, passwordIsValid]);
 
   const emailChangeHandler = (e) => {

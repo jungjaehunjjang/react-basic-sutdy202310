@@ -3,7 +3,7 @@ import styles from './Input.module.scss';
 
 const Input = ({ input, label, onAdd }) => {
   const amountChangeHandler = (e) => {
-    onAdd(e.target.vlaue);
+    onAdd(e.target.value);
   };
 
   return (
